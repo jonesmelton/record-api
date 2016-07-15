@@ -15,6 +15,7 @@ describe Record do
                                    birthday: "Mar 20 1947" })}
 
   describe "initialization" do
+
     it "is instantiated successfully" do
       expect(Record.new(record_args)).to be_a(Record)
     end
@@ -44,4 +45,5 @@ describe Record do
     end
     
   end
+
 end

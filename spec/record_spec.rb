@@ -43,6 +43,10 @@ describe Record do
     it "has the correct favorite color" do
       expect(test_record.favorite_color).to eq("green")
     end
+
+    it "raises KeyError if attributes are missing" do
+      expect{Record.new({})}.to raise_error(KeyError)
+    end
     
   end
 

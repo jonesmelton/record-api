@@ -22,5 +22,19 @@ describe CSVParser do
 
   end
 
+  describe "#parse_CSV_collection with pipes" do
+    it "parses without errors" do
+      expect(CSVParser.parse_CSV_collection(psv_records)).to be_a(Array)
+    end
+    
+    it "returns an array of hashes" do
+      expect(CSVParser.parse_CSV_collection(psv_records)).to all(be_a Hash)
+    end
+
+    it "sets key/value pairs correctly" do
+      expect(CSVParser.parse_CSV_collection(psv_records)[0]).to eq({first_name: "Bub", last_name: "TheBoulder", gender: "sometimes", birthday: "may 10 2025", favorite_color: "green"})
+    end
+  end
+
 end
 

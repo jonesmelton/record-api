@@ -7,5 +7,9 @@ describe RecordCollection do
       expect(RecordCollection.new).to be_a(RecordCollection)
     end
 
+    xit "loads the csv file" do
+     
+    end
+
   end
 end

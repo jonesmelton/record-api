@@ -1,9 +1,10 @@
 require "rspec"
 require_relative "../csv_operations.rb"
 
-describe "continuous integration" do
-  it "passes this test" do
-    expect(true).to be true
+describe CSVParser do
+  
+  describe "#parse_CSV_collection" do 
+    
   end
 end
 

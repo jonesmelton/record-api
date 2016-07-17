@@ -29,7 +29,6 @@ describe CSVParser do
     it "parses without errors" do
       expect(test_records_PSV).to be_a(Array)
     end
-    
     it "returns an array of hashes" do
       expect(test_records_PSV).to all(be_a Hash)
     end

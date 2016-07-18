@@ -32,7 +32,9 @@ class RecordCollection
   end
 
   def save_all_records!
+    headers = ["first_name", "last_name", "gender", "birthday", "favorite_color"]
     CSV.open("db/records.csv", "wb") do |csv|
+      csv << headers
       all_records.each do |record|
         csv << record.to_hash.values
       end

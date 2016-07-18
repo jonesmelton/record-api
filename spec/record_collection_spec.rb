@@ -21,7 +21,7 @@ describe RecordCollection do
 
     describe "#order_by_gender" do
       it "returns females first" do
-        expect(test_records.order_by_gender.map { |record| record.first_name } ).to eq(["Laeticia", "Mary", "Jason"])
+        expect(test_records.order_by_gender.map { |record| record.first_name } ).to eq(["Laeticia", "Mary", "Jason", "Harold"])
       end
     end
 

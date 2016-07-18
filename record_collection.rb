@@ -11,9 +11,9 @@ class RecordCollection
 
   def order_by_gender
     split_genders = all_records.group_by { |record| record.gender }
-    split_and_sorted = split_genders.map { |gender, records| sort_by_last_name(split_genders[gender]) }
-    split_and_sorted["female"].concat(split_and_sorted["male"])
-    p split_and_sorted
+    sorted_female = sort_by_last_name(split_genders["female"])
+    sorted_male = sort_by_last_name(split_genders["male"])
+    sorted_female.concat(sorted_male)
   end
 
   private

@@ -1,6 +1,7 @@
 require_relative 'csv_operations'
 require_relative 'record'
 require 'pry'
+require 'csv'
 
 class RecordCollection
   attr_reader :all_records
@@ -24,10 +25,20 @@ class RecordCollection
     sorted_female.concat(sorted_male)
   end
 
+  def self.save_record(record)
+    CSV.open("db/records.csv", "a") do |csv|
+      csv << record.values
+    end
+  end
+
   private
 
   def sort_by_last_name(collection)
     collection.sort_by { |record| record.last_name }
+  end
+
+  def save_records!
+
   end
 
   def load_records

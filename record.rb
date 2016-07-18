@@ -11,13 +11,12 @@ class Record
     @favorite_color = args.fetch(:favorite_color)
   end
 
-  def to_json(*a)
-    
-      { "first_name" => @first_name,
-                "last_name" => @last_name,
-                "gender" => @gender,
-                "birthday" => @birthday.to_s,
-                "favorite_color" => @favorite_color}.to_json(*a)
+  def to_hash
+    {first_name: @first_name,
+     last_name: @last_name,
+     gender: @gender,
+     birthday: @birthday.to_s,
+     favorite_color: @favorite_color}
   end
 
 end

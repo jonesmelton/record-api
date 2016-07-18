@@ -9,6 +9,10 @@ class RecordCollection
     @all_records = load_records
   end
 
+  def order_by_birthday
+    all_records.sort_by { |record| record.birthday }
+  end
+
   def order_by_gender
     split_genders = all_records.group_by { |record| record.gender }
     sorted_female = sort_by_last_name(split_genders["female"])

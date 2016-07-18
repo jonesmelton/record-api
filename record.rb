@@ -1,3 +1,5 @@
+require 'json'
+
 class Record
   attr_reader :first_name, :last_name, :gender, :favorite_color, :birthday
 
@@ -7,6 +9,15 @@ class Record
     @gender = args.fetch(:gender)
     @birthday = Date.parse(args.fetch(:birthday))
     @favorite_color = args.fetch(:favorite_color)
+  end
+
+  def to_json(*a)
+    
+      { "first_name" => @first_name,
+                "last_name" => @last_name,
+                "gender" => @gender,
+                "birthday" => @birthday.to_s,
+                "favorite_color" => @favorite_color}.to_json(*a)
   end
 
 end

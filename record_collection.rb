@@ -25,9 +25,17 @@ class RecordCollection
     sorted_female.concat(sorted_male)
   end
 
-  def self.save_record(record)
+  def self.add_record(record)
     CSV.open("db/records.csv", "a") do |csv|
       csv << record.values
+    end
+  end
+
+  def save_all_records!
+    CSV.open("db/records.csv", "wb") do |csv|
+      all_records.each do |record|
+        csv << record.to_hash.values
+      end
     end
   end
 
@@ -35,10 +43,6 @@ class RecordCollection
 
   def sort_by_last_name(collection)
     collection.sort_by { |record| record.last_name }
-  end
-
-  def save_records!
-
   end
 
   def load_records

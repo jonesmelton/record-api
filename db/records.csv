@@ -1,6 +1,4 @@
-first_name,last_name,gender,birthday,favorite_color
-Jason,Caldwell,male,nov 12 1930,purple
-Mary,Mastersen,female,feb 27 1993,white
-Laeticia,Aiern,female,july 25 1974,yellow
-Harold,Sachen,male,dec 19 1983,blue 
-Jon,Graham,male,2013-01-02,yellow
+Jason,Caldwell,male,1930-11-12,purple
+Mary,Mastersen,female,1993-02-27,white
+Laeticia,Aiern,female,1974-07-25,yellow
+Harold,Sachen,male,1983-12-19,blue

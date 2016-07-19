@@ -38,5 +38,21 @@ describe CSVParser do
     end
   end
 
+  describe "#parse_record" do
+    reference_record = { first_name: "Jacob",
+                         last_name: "Price",
+                         gender: "male",
+                         birthday: "sept 12 2012",
+                         favorite_color: "purple" }
+
+    it "parses with commas" do
+      expect(CSVParser.parse_record("Jacob,Price,male,sept 12 2012,purple")).to eq reference_record
+    end
+
+    it "parses with pipes" do
+      expect(CSVParser.parse_record("Jacob|Price|male|sept 12 2012|purple")).to eq reference_record
+    end
+  end
+
 end
 

@@ -19,7 +19,7 @@ module CSVParser
   # if that were allowed in modules
 
   def self.clean_pipes(csv)
-    csv.gsub("|", ",")
+    csv.tr("|", ",")
   end
 
 end

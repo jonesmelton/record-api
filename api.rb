@@ -7,17 +7,20 @@ require_relative 'record_collection'
 
     #for testing the api is online
     resource :records do
+      records = RecordCollection.new
       get do
       end
-    end
 
-    resource :gender do
-      records = RecordCollection.new
-
-      get do
+      get :gender do
         records.gender
       end
 
+      get :birthday do
+        records.birthday
+      end
+
     end
+
+
   end
 

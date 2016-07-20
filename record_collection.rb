@@ -22,6 +22,10 @@ class RecordCollection
     format_records(order_by_gender)
   end
 
+  def birthday
+    format_records(order_by_birthday)
+  end
+
   def order_by_gender
     split_genders = all_records.group_by { |record| record.gender }
     sorted_female = sort_by_last_name(split_genders["female"])

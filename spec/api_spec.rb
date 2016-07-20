@@ -14,19 +14,38 @@ describe RecordAPI do
     end
   end
 
-  describe "GET /gender" do
+  describe "GET /records/gender" do
 
     it "returns 200 OK" do
-      get "/gender"
+      get "/records/gender"
       expect_status 200
     end
 
     it "returns correctly formatted json" do
-
+      get "/records/gender"
+      expect(json_body[0]).to eq({first_name: "Laeticia",
+                                  last_name: "Aiern",
+                                  gender: "female",
+                                  birthday: "1974-07-25",
+                                  favorite_color: "yellow"})
     end
-
-
-
   end
 
+  describe "GET /records/birthday" do
+    it "returns 200 OK" do
+      get "/records/birthday"
+      expect_status 200
+    end
+
+    it "returns correctly formatted json" do
+      get "/records/birthay"
+      p json_body[0]
+      expect(json_body[0]).to eq({first_name: "Jason",
+                                  last_name: "Caldwell",
+                                  gender: "male",
+                                  birthday: "1930-11-12",
+                                  favorite_color: "purple"})
+    end
+
+  end
 end

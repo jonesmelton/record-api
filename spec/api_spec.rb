@@ -7,10 +7,22 @@ Airborne.configure do |config|
 end
 
 describe RecordAPI do
-  describe "GET" do
-    it "returns a json" do
+  describe "GET /" do
+    it "returns 200 OK" do
       get "/records"
       expect(response.status).to eq(200)
     end
   end
+
+  describe "GET /gender" do
+
+    it "returns 200 OK" do
+      get "/gender"
+      expect_status 200
+    end
+
+
+
+  end
+
 end

@@ -5,11 +5,17 @@ require_relative 'record_collection'
   class RecordAPI < Grape::API
     format :json
 
-    namespace :records do
+    #for testing the api is online
+    resource :records do
+      get do
+      end
+    end
+
+    resource :gender do
       records = RecordCollection.new
 
-      get "/" do
-        records.all
+      get do
+        p records.order_by_gender
       end
 
     end

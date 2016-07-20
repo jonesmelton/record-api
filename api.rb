@@ -8,7 +8,9 @@ require_relative 'record_collection'
     #for testing the api is online
     resource :records do
       records = RecordCollection.new
+
       get do
+        p records.all
       end
 
       get :gender do
@@ -17,6 +19,10 @@ require_relative 'record_collection'
 
       get :birthday do
         records.birthday
+      end
+
+      get :name do
+        records.name
       end
 
     end

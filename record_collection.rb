@@ -18,12 +18,20 @@ class RecordCollection
     sort_by_last_name(all_records)
   end
 
+  def all
+    format_records(all_records)
+  end
+
   def gender
     format_records(order_by_gender)
   end
 
   def birthday
     format_records(order_by_birthday)
+  end
+
+  def name
+    format_records(order_by_last_name)
   end
 
   def order_by_gender

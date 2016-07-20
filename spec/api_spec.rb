@@ -12,6 +12,15 @@ describe RecordAPI do
       get "/records"
       expect(response.status).to eq(200)
     end
+
+    it "returns correctly formatted json" do
+      get "/records"
+      expect(json_body[0]).to eq({first_name: "Jason",
+                                  last_name: "Caldwell",
+                                  gender: "male",
+                                  birthday: "1930-11-12",
+                                  favorite_color: "purple"})
+    end
   end
 
   describe "GET /records/gender" do
@@ -37,15 +46,32 @@ describe RecordAPI do
       expect_status 200
     end
 
+    # mysteriously failing test even though
+    # manually verified this request works
     it "returns correctly formatted json" do
-      get "/records/birthay"
-      p json_body[0]
+      get "/records/birthday"
+      json_body[0]
       expect(json_body[0]).to eq({first_name: "Jason",
                                   last_name: "Caldwell",
                                   gender: "male",
                                   birthday: "1930-11-12",
                                   favorite_color: "purple"})
     end
+  end
 
+  describe "GET /records/name" do
+    it "returns 200 OK" do
+      get "/records/name"
+      expect_status 200
+    end
+
+    it "returns correctly formatted json" do
+      get "/records/name"
+      expect(json_body[0]).to eq({first_name: "Laeticia",
+                                  last_name: "Aiern",
+                                  gender: "female",
+                                  birthday: "1974-07-25",
+                                  favorite_color: "yellow"})
+    end
   end
 end

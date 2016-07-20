@@ -74,4 +74,10 @@ describe RecordAPI do
                                   favorite_color: "yellow"})
     end
   end
+
+  describe "POST /records" do
+    it "returns 200 OK" do
+      post "/records"
+    end
+  end
 end

@@ -10,6 +10,10 @@ class RecordCollection
     @all_records = load_records
   end
 
+  def all
+    all_records.map { |record| record.to_hash }
+  end
+
   def order_by_birthday
     all_records.sort_by { |record| record.birthday }
   end

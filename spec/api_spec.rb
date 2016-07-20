@@ -46,8 +46,6 @@ describe RecordAPI do
       expect_status 200
     end
 
-    # mysteriously failing test even though
-    # manually verified this request works
     it "returns correctly formatted json" do
       get "/records/birthday"
       json_body[0]
@@ -72,6 +70,12 @@ describe RecordAPI do
                                   gender: "female",
                                   birthday: "1974-07-25",
                                   favorite_color: "yellow"})
+    end
+  end
+
+  describe "POST /records" do
+    xit "returns 200 OK" do
+      post "/records"
     end
   end
 end

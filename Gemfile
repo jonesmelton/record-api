@@ -1,3 +1,6 @@
+source 'https://rubygems.org'
 gem 'rspec'
 gem 'pry'
-source 'https://rubygems.org'
+gem 'shotgun'
+gem 'airborne'
+gem 'grape'

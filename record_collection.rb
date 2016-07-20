@@ -18,6 +18,22 @@ class RecordCollection
     sort_by_last_name(all_records)
   end
 
+  def all
+    format_records(all_records)
+  end
+
+  def gender
+    format_records(order_by_gender)
+  end
+
+  def birthday
+    format_records(order_by_birthday)
+  end
+
+  def name
+    format_records(order_by_last_name)
+  end
+
   def order_by_gender
     split_genders = all_records.group_by { |record| record.gender }
     sorted_female = sort_by_last_name(split_genders["female"])
@@ -42,6 +58,10 @@ class RecordCollection
   end
 
   private
+
+  def format_records(records)
+   records.map { |record| record.to_hash }
+  end
 
   def sort_by_last_name(collection)
     collection.sort_by { |record| record.last_name }

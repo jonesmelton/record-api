@@ -46,8 +46,6 @@ describe RecordAPI do
       expect_status 200
     end
 
-    # mysteriously failing test even though
-    # manually verified this request works
     it "returns correctly formatted json" do
       get "/records/birthday"
       json_body[0]

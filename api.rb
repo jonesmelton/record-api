@@ -15,7 +15,7 @@ require_relative 'record_collection'
       records = RecordCollection.new
 
       get do
-        p records.order_by_gender
+        records.gender
       end
 
     end

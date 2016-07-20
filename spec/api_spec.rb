@@ -21,6 +21,10 @@ describe RecordAPI do
       expect_status 200
     end
 
+    it "returns correctly formatted json" do
+
+    end
+
 
 
   end

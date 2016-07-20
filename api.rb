@@ -13,7 +13,8 @@ require_relative 'record_collection'
 
       post do
         content_type "text/plain"
-        p record = CSVParser.parse_record(params.record)
+        record = Record.new(record = CSVParser.parse_record(params.record))
+        RecordCollection.add_record(record.to_hash)
       end
 
       get do
